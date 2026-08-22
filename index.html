@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Gift For You, Nadine ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap');
+:root{--wine:#170b16;--rose:#e9a0bd;--rose2:#b94e7c;--paper:#fff7f9;--ink:#6b4254}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080508;color:#f7ebf1;font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 20% 15%,#6d254d66,transparent 30%),radial-gradient(circle at 85% 70%,#40235488,transparent 32%),linear-gradient(145deg,#110912,#210d1e 50%,#080508);z-index:-2}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}.petal{position:absolute;top:-40px;animation:fall linear forwards;filter:drop-shadow(0 0 6px #ef98bb66)}@keyframes fall{to{transform:translateY(110vh) rotate(420deg);opacity:0}}
+.app{width:min(100%,470px);margin:auto;min-height:100vh;padding-bottom:90px;position:relative}
+.screen{min-height:100vh;padding:32px 22px 50px;display:none;animation:reveal .8s cubic-bezier(.2,.8,.2,1)}.screen.active{display:flex;flex-direction:column;justify-content:center}
+@keyframes reveal{from{opacity:0;transform:translateY(25px) scale(.98)}to{opacity:1;transform:none}}
+.brand{text-align:center;letter-spacing:5px;font-size:9px;color:#d7a6ba;margin-bottom:14px}.title{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:42px;line-height:1;margin:8px 0;text-align:center}.subtitle{text-align:center;font-size:11px;color:#ad8a9b;line-height:1.8}
+.glass{background:linear-gradient(145deg,#ffffff10,#ffffff04);border:1px solid #ffffff18;border-radius:28px;box-shadow:0 30px 100px #0008,inset 0 1px #ffffff0d;backdrop-filter:blur(18px)}
+.lock-card{padding:38px 22px}.hero-flower{text-align:center;font-size:48px;filter:drop-shadow(0 0 24px #e896b9aa);animation:float 3.5s ease-in-out infinite}@keyframes float{50%{transform:translateY(-10px) rotate(4deg)}}
+.dots{display:flex;justify-content:center;gap:10px;margin:26px}.dot{width:9px;height:9px;border-radius:50%;border:1px solid #9f687e;transition:.3s}.dot.on{background:#eeaac6;box-shadow:0 0 14px #eeaac6}
+.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.key{height:62px;border-radius:20px;border:1px solid #ffffff13;background:#ffffff08;color:#f8edf3;font-size:16px;font-family:inherit;transition:.2s}.key:hover{background:#e995bd18}.key:active{transform:scale(.93)}
+.btn{border:1px solid #ffffff22;border-radius:999px;padding:14px 25px;background:linear-gradient(120deg,#dc78a5,#a94270);color:white;font-family:inherit;cursor:pointer;box-shadow:0 12px 35px #b34a753d;transition:.25s}.btn:hover{transform:translateY(-2px);box-shadow:0 18px 45px #b34a7555}
+.welcome{text-align:center}.cake{font-size:76px;filter:drop-shadow(0 0 30px #e69abc99);margin-bottom:10px}
+.section{padding:35px 22px}.section-title{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;text-align:center;margin:6px 0 24px}
+.photo-stack{position:relative;margin:30px auto;width:min(100%,360px);height:390px}.polaroid{position:absolute;background:#fff7fa;padding:10px 10px 35px;box-shadow:0 30px 70px #0009;width:82%;left:9%;color:#70445a}.polaroid.back{transform:rotate(5deg) translate(16px,8px);opacity:.55}.polaroid.front{transform:rotate(-2deg)}.polaroid img{width:100%;height:300px;object-fit:cover;background:#e5d1da}.caption{text-align:center;font-family:"Cormorant Garamond",serif;font-size:21px;margin-top:8px}
+.player{padding:28px 20px}.album{width:190px;height:190px;border-radius:50%;margin:5px auto 25px;background:radial-gradient(circle,#f7bdd4 0 6%,#7f3058 7% 25%,#4b1937 26% 59%,#190b18 60%);box-shadow:0 0 0 8px #ffffff06,0 0 45px #d36c9b40;animation:spin 12s linear infinite;animation-play-state:paused}.album.playing{animation-play-state:running}@keyframes spin{to{transform:rotate(360deg)}}
+.song-name{text-align:center;font-family:"Cormorant Garamond",serif;font-size:28px}.artist{text-align:center;font-size:11px;color:#a98798;margin-top:5px}.progress{height:4px;background:#ffffff15;border-radius:9px;margin:25px 0 16px;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,#dc78a5,#f1bad0)}
+.time{display:flex;justify-content:space-between;font-size:9px;color:#8e7181;margin-top:-9px}.controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:22px}.control{border:0;background:transparent;color:white;font-size:18px;cursor:pointer}.play{width:58px;height:58px;border-radius:50%;background:linear-gradient(145deg,#e789b3,#a64070);border:0;color:white;font-size:18px;box-shadow:0 12px 35px #d46b9b55}
+.track{display:flex;align-items:center;gap:14px;margin-top:9px;padding:15px;border-radius:18px;border:1px solid #ffffff0d;background:#ffffff04;cursor:pointer}.track.active{background:#d977a915;border-color:#d977a944}.track-num{color:#987184;font-size:11px}.track-info{flex:1}.track-title{font-size:13px}.track-artist{font-size:10px;color:#917587;margin-top:3px}
+.memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.memory{height:220px;border-radius:22px;overflow:hidden;background:#ffffff09;border:1px solid #ffffff12}.memory:first-child{grid-row:span 2;height:452px}.memory img{width:100%;height:100%;object-fit:cover}.memory .empty{height:100%;display:flex;align-items:center;justify-content:center;color:#8e7181;font-size:10px;text-align:center;padding:15px}
+.letter-wrap{padding:8px}.letter{background:linear-gradient(135deg,#fff9fa,#f5e4ea);color:var(--ink);border-radius:4px;padding:38px 28px;box-shadow:0 30px 80px #0009;position:relative;overflow:hidden}.letter:before,.letter:after{content:"✿";position:absolute;color:#dfa1b8;opacity:.6;font-size:26px}.letter:before{top:12px;left:16px}.letter:after{right:16px;bottom:12px}.letter h3{font-family:"Cormorant Garamond",serif;font-size:31px;text-align:center;font-weight:500;margin:0 0 22px}.letter p{font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.7}.signature{text-align:right;font-style:italic;margin-top:28px}
+.timeline{position:relative;padding-left:24px}.timeline:before{content:"";position:absolute;left:5px;top:5px;bottom:5px;width:1px;background:#d981a6}.moment{position:relative;padding:0 0 25px}.moment:before{content:"";position:absolute;width:11px;height:11px;border-radius:50%;left:-24px;top:5px;background:#e89aba;box-shadow:0 0 12px #e89aba}.moment h4{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:500;margin:0}.moment p{font-size:11px;color:#a48797;line-height:1.7;margin-top:5px}
+.final-card{padding:42px 25px;text-align:center}.final-card .big{font-size:70px}.hidden{display:none}.footer{text-align:center;color:#806373;font-size:10px;margin-top:25px}
+@media(min-width:700px){body{padding:20px}.app{border-radius:34px;overflow:hidden;box-shadow:0 0 100px #000}}
+</style>
+</head>
+<body><div id="petals"></div><main class="app">
+
+<section class="screen active" id="lock"><div class="glass lock-card">
+<div class="hero-flower">🌷</div><div class="brand">A LITTLE SECRET</div><h1 class="title">For You,<br>My Love</h1><p class="subtitle">Enter our secret code to open<br>something made especially for you.</p>
+<div class="dots" id="dots"><b class="dot"></b><b class="dot"></b><b class="dot"></b><b class="dot"></b><b class="dot"></b><b class="dot"></b></div>
+<div class="keypad"><button class="key" onclick="press('1')">1</button><button class="key" onclick="press('2')">2</button><button class="key" onclick="press('3')">3</button><button class="key" onclick="press('4')">4</button><button class="key" onclick="press('5')">5</button><button class="key" onclick="press('6')">6</button><button class="key" onclick="press('7')">7</button><button class="key" onclick="press('8')">8</button><button class="key" onclick="press('9')">9</button><button class="key" onclick="clearCode()">×</button><button class="key" onclick="press('0')">0</button><button class="key" onclick="unlock()">↵</button></div>
+<p class="subtitle" style="margin-top:20px">Hint: a date worth remembering ♡</p></div></section>
+
+<section class="screen" id="welcome"><div class="glass final-card welcome"><div class="cake">🎂</div><div class="brand">TODAY IS YOUR DAY</div><h1 class="title">Happy Birthday,<br><span id="personName">Nadine</span> ♡</h1><p class="subtitle">I prepared a little journey of memories,<br>music, and words just for you.</p><button class="btn" style="margin-top:22px" onclick="go('playlist')">Begin the Journey ✨</button></div></section>
+
+<section class="screen" id="playlist"><div class="brand">01 — OUR SOUNDTRACK</div><h2 class="section-title">Special Playlist</h2><div class="glass player"><div class="album" id="album"></div><div class="song-name" id="songName"></div><div class="artist" id="artist"></div><div class="progress"><div class="bar" id="bar"></div></div><div class="time"><span id="now">0:00</span><span id="dur">0:00</span></div><div class="controls"><button class="control" onclick="prevSong()">↤</button><button class="play" id="playBtn" onclick="toggleMusic()">▶</button><button class="control" onclick="nextSong()">↦</button></div></div><div id="trackList"></div><div style="text-align:center;margin-top:25px"><button class="btn" onclick="go('memories')">Continue ♡</button></div></section>
+
+<section class="screen" id="memories"><div class="brand">02 — LITTLE MOMENTS</div><h2 class="section-title">Our Memories</h2><div class="memory-grid">
+<div class="memory"><img src="photos/foto1.jpg" onerror="this.outerHTML='<div class=empty>Tambahkan<br>foto1.jpg</div>'"></div>
+<div class="memory"><img src="photos/foto2.jpg" onerror="this.outerHTML='<div class=empty>foto2.jpg</div>'"></div>
+<div class="memory"><img src="photos/foto3.jpg" onerror="this.outerHTML='<div class=empty>foto3.jpg</div>'"></div></div>
+<div style="text-align:center;margin-top:25px"><button class="btn" onclick="go('timeline')">A Few More Things ✦</button></div></section>
+
+<section class="screen" id="timeline"><div class="brand">03 — THE STORY</div><h2 class="section-title">Little Things<br>I Remember</h2><div class="timeline"><div class="moment"><h4>The beginning</h4><p>Tulis cerita kecil tentang bagaimana semuanya dimulai.</p></div><div class="moment"><h4>My favorite memory</h4><p>Masukkan momen sederhana yang selalu ingin kamu ingat.</p></div><div class="moment"><h4>And today</h4><p>Hari spesial untuk merayakan seseorang yang sangat berarti.</p></div></div><div style="text-align:center"><button class="btn" onclick="go('letter')">Open My Letter 💌</button></div></section>
+
+<section class="screen" id="letter"><div class="brand">04 — FROM MY HEART</div><h2 class="section-title">A Letter For You</h2><div class="letter-wrap"><article class="letter"><h3>My dearest,</h3><p>Di hari spesial ini, aku ingin kamu tahu bahwa kamu adalah salah satu bagian paling indah dalam cerita yang pernah aku kenal.</p><p>Terima kasih untuk tawa, cerita, dan semua momen kecil yang mungkin terlihat sederhana, tetapi selalu punya tempat tersendiri di ingatanku.</p><p>Semoga di tahun yang baru ini kamu menemukan lebih banyak alasan untuk tersenyum, lebih banyak mimpi yang tercapai, dan lebih banyak hari yang terasa hangat.</p><p>Apa pun yang terjadi nanti, jangan lupa betapa berartinya dirimu. Hari ini adalah milikmu — jadi nikmati setiap detiknya.</p><div class="signature">With all my heart,<br>someone who cares ♡</div></article></div><div style="text-align:center;margin-top:25px"><button class="btn" onclick="go('final')">One Last Surprise ✨</button></div></section>
+
+<section class="screen" id="final"><div class="glass final-card"><div class="big">🎁</div><div class="brand">THE FINAL CHAPTER</div><h1 class="title">Make A Wish</h1><p class="subtitle">Close your eyes for a moment.<br>Think of something you truly want.</p><button class="btn" onclick="wish()">Make My Wish ✨</button><div id="wishText" class="hidden"><p style="font-family:'Cormorant Garamond';font-size:28px;color:#efafc8;margin:28px 0 5px">I hope it comes true.</p><p class="subtitle">Happy Birthday, with all my love. 🌷</p></div></div><div class="footer">Made with ♡ just for you</div></section>
+
+</main><audio id="audio"></audio>
+<script>
+const SECRET="280808";let entered="",current=0,playing=false;
+const songs=[{title:"Enchanted",artist:"Taylor Swift",file:"music/lagu1.mp3"},{title:"Angel Baby",artist:"Troye Sivan",file:"music/lagu2.mp3"},{title:"My Love",artist:"Westlife",file:"music/lagu3.mp3"}];
+const audio=document.getElementById("audio");
+function press(n){if(entered.length<6){entered+=n;updateDots()}}function clearCode(){entered="";updateDots()}function updateDots(){document.querySelectorAll(".dot").forEach((d,i)=>d.classList.toggle("on",i<entered.length))}
+function unlock(){if(entered===SECRET)go("welcome");else{entered="";updateDots();document.querySelector(".lock-card").animate([{transform:"translateX(0)"},{transform:"translateX(-8px)"},{transform:"translateX(8px)"},{transform:"translateX(0)"}],{duration:280});}}
+function go(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0);if(id==="playlist")renderTracks()}
+function renderTracks(){let s=songs[current];songName.textContent=s.title;artist.textContent=s.artist;trackList.innerHTML=songs.map((x,i)=>`<div class="track ${i===current?"active":""}" onclick="selectSong(${i})"><div class="track-num">0${i+1}</div><div class="track-info"><div class="track-title">${x.title}</div><div class="track-artist">${x.artist}</div></div><div>♫</div></div>`).join("")}
+function selectSong(i){current=i;audio.pause();audio.src=songs[i].file;playing=false;playBtn.textContent="▶";album.classList.remove("playing");renderTracks()}
+function toggleMusic(){if(!audio.src)audio.src=songs[current].file;if(playing){audio.pause();playing=false;playBtn.textContent="▶";album.classList.remove("playing")}else{audio.play().then(()=>{playing=true;playBtn.textContent="Ⅱ";album.classList.add("playing")}).catch(()=>alert("Masukkan file lagu MP3 ke folder music terlebih dahulu."))}}
+function nextSong(){selectSong((current+1)%songs.length);toggleMusic()}function prevSong(){selectSong((current-1+songs.length)%songs.length);toggleMusic()}
+function fmt(v){v=Math.floor(v||0);return Math.floor(v/60)+":"+String(v%60).padStart(2,"0")}
+audio.addEventListener("timeupdate",()=>{bar.style.width=(audio.duration?audio.currentTime/audio.duration*100:0)+"%";now.textContent=fmt(audio.currentTime);dur.textContent=fmt(audio.duration)});audio.addEventListener("ended",nextSong);
+function wish(){wishText.classList.remove("hidden");for(let i=0;i<35;i++)setTimeout(makePetal,i*55)}
+function makePetal(){let p=document.createElement("div");p.className="petal";p.textContent=["🌸","✦","♡","🌷"][Math.floor(Math.random()*4)];p.style.left=Math.random()*100+"vw";p.style.fontSize=(12+Math.random()*17)+"px";p.style.animationDuration=(4+Math.random()*4)+"s";document.getElementById("petals").appendChild(p);setTimeout(()=>p.remove(),8500)}
+setInterval(makePetal,850);renderTracks();
+</script></body></html>
